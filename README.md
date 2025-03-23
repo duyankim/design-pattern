@@ -1,35 +1,28 @@
 ## 템플릿 메서드 패턴 UML
 
-```plantuml
-@startuml
-skinparam classAttributeIconSize 0
+```mermaid
+classDiagram
+    class FileParser {
+        <<abstract>>
+        - headerData: Header
+        - dataLines: List~Data~
+        - trailerData: Trailer
+        + parseFile(path: String) void
+        - readFile(path: String) void
+        - parseHeader() void
+        - parseData() void
+        - parseTrailer() void
+        - insert() void
+    }
 
-abstract class FileParser {
-    - Header headerData
-    - List<Data> dataLines
-    - Trailer trailerData
+    class CMSParser
+    class RprParser
+    class IftParser
+    class HofParser
 
-    + void parseFile(String path)
-    # abstract void readFile(String path)
-    # abstract void parseHeader()
-    # abstract void parseData()
-    # abstract void parseTrailer()
-    # abstract void insert()
-}
-
-class CMSParser {
-}
-
-class RprParser {
-}
-
-class IftParser {
-}
-
-FileParser <|-- CMSParser
-FileParser <|-- RprParser
-FileParser <|-- IftParser
-FileParser <|-- HofParser
-@enduml
+    FileParser <|-- CMSParser
+    FileParser <|-- RprParser
+    FileParser <|-- IftParser
+    FileParser <|-- HofParser
 
 ```
