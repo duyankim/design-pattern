@@ -19,10 +19,12 @@ classDiagram
     class RprParser
     class IftParser
     class HofParser
+    class EntParser
 
-    FileParser <|-- CMSParser
+    FileParser <|-- CmsParser
     FileParser <|-- RprParser
     FileParser <|-- IftParser
     FileParser <|-- HofParser
+    FileParser <|-- EntParser
 
 ```
