@@ -15,7 +15,7 @@ classDiagram
         - insert() void
     }
 
-    class CMSParser
+    class CmsParser
     class RprParser
     class IftParser
     class HofParser
